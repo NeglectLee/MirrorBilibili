@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="-moz-transform:scaleX(-1);-webkit-transform:scaleX(-1);-o-transform:scaleX(-1);transform:scaleX(-1);/*IE*/filter:FlipH;" >
+<head>		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="baidu-site-verification" content="remmrkkuCo" />
+		<title>(゜ -゜)つロ弹幕视频网ilidilid -   乾杯~ ilidilid - </title>
+
+		
+		<meta name="description" content="ilidilid是一家弹幕站点,大家可以在这里找到许多的欢乐.">
+		<meta name="keywords" content="I站 弹幕 字幕 AMV MAD MTV ANIME 动漫 动漫音乐 游戏 游戏解说 ACG galgame 动画 番组 新番 初音 洛天依 vocaloid">
+		<script type="text/javascript" src="http://static.hdslb.com/js/jquery.min.js"></script>
+</head>
+<body style="margin:0px">
+<iframe id＝"il" src="http://www.bilibili.com" name="iname" frameborder="0" width="100%" height="100%"></iframe>
+
+<script type="text/javascript">
+var IframeOnClick = {
+             resolution: 200,
+             iframes: [],
+             interval: null,
+             Iframe: function() {
+              this.element = arguments[0];
+              this.cb = arguments[1];
+              this.hasTracked = false;
+             },
+             track: function(element, cb) {
+              this.iframes.push(new this.Iframe(element, cb));
+             },
+
+			 doit:function(){
+				 setInterval(function() { IframeOnClick.checkClick(); }, this.resolution);
+			 },
+
+             checkClick: function() {
+                 
+              if (document.activeElement) {
+               var activeElement = document.activeElement;
+               for (var i in this.iframes) {
+                if (activeElement === this.iframes[i].element) { // user is in this Iframe
+                 if (this.iframes[i].hasTracked == false) {
+                  this.iframes[i].cb.apply(activeElement, []);
+                  this.iframes[i].hasTracked = true;
+                 }
+                } else {
+                 this.iframes[i].hasTracked = false;
+                }
+               }
+              }
+             }
+            };
+window.onload = function (){
+		var allframe =  $('iframe');
+		for(i=0; i<allframe.length; i++) {
+ 			IframeOnClick.track(allframe[i], function() {
+				console.log(1);
+			});
+ 		}
+		IframeOnClick.doit();
+} 
+</script>
+</body>
+</html>
