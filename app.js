@@ -4,7 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var expressHbs = require('express-handlebars');
 var cookieParser = require('cookie-parser');
-//var bodyParser = require('body-parser');
+
+var bodyParser = require('body-parser');
 var http = require('http');
 
 var routes = require('./routes/index');
@@ -23,8 +24,8 @@ app.set('port', 80);
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(logger('combined'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);

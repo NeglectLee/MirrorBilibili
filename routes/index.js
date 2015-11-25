@@ -31,8 +31,14 @@ router.get('/tag/(:aid)', function(req, res, next) {
 });
 router.post('/boom',function(req,res,next) {
 	var pwd = req.body.pwd;
-	console.log(req.body.pwd);
-	res.send(pwd);
+	console.log(pwd);
+	var outdata = '438';
+	if(pwd == 'iamyourfather')
+	{
+		outdata = '2233';
+		console.log(outdata);
+	}
+	res.send(outdata);
 });
 
 router.get('/mirror', function(req, res, next) {
