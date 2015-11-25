@@ -38,6 +38,52 @@
         from {-o-transform:scaleX(1);}
         to {-o-transform:scaleX(-1);}
         }
+        .boom{
+            position: fixed;
+            top:80%;
+            left: 40%;
+        }
+        .boom input{
+            width: 200px;
+            height: 22px;
+            -moz-box-shadow: 2px 1px 5px #000000;
+            -webkit-box-shadow: 2px 1px 5px #000000;
+            box-shadow: 2px 1px 5px #000000;
+            border:solid 1px #8f848f;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright:5px;
+            -moz-border-radius-bottomleft:5px;
+            -moz-border-radius-bottomright:5px;
+            -webkit-border-top-left-radius:5px;
+            -webkit-border-top-right-radius:5px;
+            -webkit-border-bottom-left-radius:5px;
+            -webkit-border-bottom-right-radius:5px;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+        }
+         .boom button{
+            height: 22px;
+            margin-left: 10px;
+            background-color: white;
+            -moz-box-shadow: 2px 1px 5px #000000;
+            -webkit-box-shadow: 2px 1px 5px #000000;
+            box-shadow: 2px 1px 5px #000000;
+            border:solid 1px #8f848f;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright:5px;
+            -moz-border-radius-bottomleft:5px;
+            -moz-border-radius-bottomright:5px;
+            -webkit-border-top-left-radius:5px;
+            -webkit-border-top-right-radius:5px;
+            -webkit-border-bottom-left-radius:5px;
+            -webkit-border-bottom-right-radius:5px;
+            border-top-left-radius:5px;
+            border-top-right-radius:5px;
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+        }
         </style>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="baidu-site-verification" content="remmrkkuCo" />
@@ -49,10 +95,41 @@
         <script type="text/javascript" src="http://static.hdslb.com/js/jquery.min.js"></script>
 </head>
 <body style="margin:0px">
+<div class="boom">
+    <input type="password" id='pwd' />
+    <button onclick="boom()"> boom！ </button>
+</div>
 <iframe id＝"il" src="http://www.ilidilid.com/index" name="iname" frameborder="0" width="100%" height="100%"></iframe>
 
 <script type="text/javascript">
-eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('4 a(){$(\'6\').m(\'l\');k(4(){$(\'6\').j(\'g\',\'f\')},e)};d b="";$("n").i(4(c){0(c.7==h){0(b=="9"){0(3.2){0(3.2.5==1){}8{3.2.5=1;a()}}8{a()}};b=""};b+=c.7});0(3.2.5==1){a()}',24,24,'if||localStorage|window|function|show|iframe|keyCode|else|1059710912111111711410297116104101114||||var|1500|bilibili|src|13|keypress|attr|setTimeout|mirror_ifrom|addClass|body'.split('|'),0,{}));
+function a() {
+    $('iframe').addClass('mirror_ifrom');
+    setTimeout(function() {
+        $('iframe').attr('src', 'bilibili')
+    }, 1500)
+};
+function boom(){
+    var pwd = $('#pwd').val();
+    $.ajax({
+        url: '/boom',
+        type: 'POST',
+        data: {pwd: pwd},
+    })
+    .done(function(data) {
+        console.log(data);
+    })
+    .fail(function() {
+        console.log("error");
+    })
+    .always(function() {
+        console.log("complete");
+    });
+}
+
+
+// if (window.localStorage.show == 1) {
+//     a()
+// }
 </script>
 </body>
 </html>

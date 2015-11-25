@@ -29,6 +29,11 @@ router.get('/tag/(:aid)', function(req, res, next) {
 	var aid = req.params.aid;
 	res.render('view_3', { id: aid, type: "tag" });
 });
+router.post('/boom',function(req,res,next) {
+	var pwd = req.body.pwd;
+	console.log(req.body.pwd);
+	res.send(pwd);
+});
 
 router.get('/mirror', function(req, res, next) {
 	var aid = req.params.aid;
@@ -41,8 +46,6 @@ router.get('/bilibili',function(req,res,next){
       	}
     })
 });
-
-
 router.get('/index/catalogy/(:json)', function(req, res, next){
 	var id = req.params.json;
 	var requestOptions  = { 
