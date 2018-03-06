@@ -52,6 +52,16 @@ router.get('/bilibili',function(req,res,next){
       	}
     })
 });
+router.get('/curl/test',function(req,res,next){
+	var rc = {code:0,msg:'OK'};
+	console.log("curl test");
+	function sleep(milliSeconds) { 
+		    var startTime = new Date().getTime(); 
+		        while (new Date().getTime() < startTime + milliSeconds);
+			 };
+	 sleep(10000);
+	res.send(rc);
+});
 router.get('/index/catalogy/(:json)', function(req, res, next){
 	var id = req.params.json;
 	var requestOptions  = { 
@@ -71,6 +81,9 @@ router.get('/index/catalogy/(:json)', function(req, res, next){
 	});
 });
 
+router.get('/search', function(req, res, next){
+	res.render('search',{});
+});
 
 router.get('/widget/(:json)', function(req, res, next){
 	var id = req.params.json;
