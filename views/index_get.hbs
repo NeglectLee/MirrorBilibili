@@ -1,2 +1,11 @@
 <meta name="referrer" content="no-referrer" />
 {{{html}}}
+<script>
+$.ajaxSetup({              
+    beforeSend: function() {
+        var str = 'www.bilibili.com';
+        arguments[1].url = arguments[1].url.replace('api.bilibili.com', str);
+        console.log(arguments[1].url);//我们先来看看这里面有什么好玩的东西
+    }
+});
+</script>
