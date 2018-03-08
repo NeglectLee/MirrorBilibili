@@ -3,9 +3,24 @@
 <script>
 $.ajaxSetup({              
     beforeSend: function() {
-        var str = 'www.ilidilid.com';
+        var str = 'act.bilibili.com:8900';
         arguments[1].url = arguments[1].url.replace('api.bilibili.com', str);
         console.log(arguments[1].url);//我们先来看看这里面有什么好玩的东西
     }
 });
 </script>
+<style>
+.load-state {
+    text-align: center;
+    padding: 10px 0;
+    color: #99a2aa;
+    /* height: 100%; */
+    display: table;
+    width: 100%;
+}
+.lazy-img img {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+}
+</style>
